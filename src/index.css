@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+* {
+  block-size: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: white;
+}
+
+button:hover {
+  cursor: pointer;
+}
