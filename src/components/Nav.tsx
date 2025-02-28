@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { LikeModal } from "./modal/LikeModal";
 import { useState } from "react";
+import { SearchBar } from "./SearchBar";
 
 export function Nav() {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -21,7 +22,7 @@ export function Nav() {
       <Link to="/Recipes/1" className="hover:underline font-bold text-[24px]">
         List Recipes
       </Link>
-      <input type="text" placeholder="Search for recipes" className="px-4 py-2 rounded-md" />
+      <SearchBar />
       <button onClick={handleLikeRecipe} className="hover:underline font-bold text-[24px]">
         Liked
       </button>

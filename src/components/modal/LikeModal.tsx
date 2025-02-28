@@ -35,8 +35,17 @@ export const LikeModal: React.FC<LikeModalProps> = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
+  const handleOutsideClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 text-black">
+    <div
+      className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 text-black "
+      onClick={(e) => handleOutsideClick(e)}
+    >
       <div className="bg-white p-6 rounded-lg w-1/3">
         <h2 className="text-2xl font-bold">Liked Recipes</h2>
         {isLoading ? (

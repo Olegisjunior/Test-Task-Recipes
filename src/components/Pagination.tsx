@@ -46,11 +46,10 @@ export const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages 
   return (
     <div className="flex justify-center mt-6 space-x-4">
       <Link
-        to={`/recipes/${currentPage - 1}`}
-        className={`px-4 py-2 bg-blue-500 text-white rounded-md ${
-          currentPage === 1 ? "disabled:opacity-50" : ""
+        to={currentPage === 1 ? "#" : `/recipes/${currentPage - 1}`}
+        className={`px-4 py-2 bg-[#282828] text-white rounded-md ${
+          currentPage === 1 ? "opacity-50 cursor-not-allowed pointer-events-none" : ""
         }`}
-        aria-disabled={currentPage === 1}
       >
         &#8592;
       </Link>
@@ -65,7 +64,7 @@ export const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages 
             key={index}
             to={`/recipes/${page}`}
             className={`px-4 py-2 rounded-md ${
-              currentPage === page ? "bg-blue-500 text-white" : "bg-gray-200"
+              currentPage === page ? "bg-[#282828] text-white" : "bg-gray-200"
             }`}
           >
             {page}
@@ -74,11 +73,10 @@ export const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages 
       )}
 
       <Link
-        to={`/recipes/${currentPage + 1}`}
-        className={`px-4 py-2 bg-blue-500 text-white rounded-md ${
-          currentPage === totalPages ? "disabled:opacity-50" : ""
+        to={currentPage === totalPages ? "#" : `/recipes/${currentPage + 1}`}
+        className={`px-4 py-2 bg-[#282828] text-white rounded-md ${
+          currentPage === totalPages ? "opacity-50 cursor-not-allowed pointer-events-none" : ""
         }`}
-        aria-disabled={currentPage === totalPages}
       >
         &#8594;
       </Link>
